@@ -40,11 +40,11 @@ final lightTheme = ThemeData(
     fillColor: Colors.white,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide.none,
+      borderSide: const BorderSide(color: Color(0xFFD1D5DB), width: 1.5),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide.none,
+      borderSide: const BorderSide(color: Color(0xFFE5E7EB), width: 1.5),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16),

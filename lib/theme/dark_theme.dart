@@ -40,11 +40,11 @@ final darkTheme = ThemeData(
     fillColor: const Color(0xFF374151),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide.none,
+      borderSide: const BorderSide(color: Color(0xFF4B5563), width: 1.5),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide.none,
+      borderSide: const BorderSide(color: Color(0xFF374151), width: 1.5),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(16),
