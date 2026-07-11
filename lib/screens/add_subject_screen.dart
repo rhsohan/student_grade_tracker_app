@@ -22,7 +22,8 @@ class AddSubjectScreen extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32),
           side: BorderSide(
-            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.05),
+            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.4),
+            width: 1.5,
           ),
         ),
         child: Padding(

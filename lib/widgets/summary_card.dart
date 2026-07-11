@@ -18,6 +18,15 @@ class SummaryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 10),
+      elevation: 4,
+      shadowColor: color.withValues(alpha: 0.2),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+        side: BorderSide(
+          color: color.withValues(alpha: 0.5),
+          width: 1.5,
+        ),
+      ),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),

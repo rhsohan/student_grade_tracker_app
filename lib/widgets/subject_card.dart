@@ -25,6 +25,15 @@ class SubjectCard extends StatelessWidget {
 
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+      elevation: 4,
+      shadowColor: gradeColor.withValues(alpha: 0.2),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+        side: BorderSide(
+          color: gradeColor.withValues(alpha: 0.5),
+          width: 1.5,
+        ),
+      ),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: ListTile(
