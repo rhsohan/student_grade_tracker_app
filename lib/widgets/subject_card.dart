@@ -12,16 +12,16 @@ class SubjectCard extends StatelessWidget {
     Color gradeColor;
     switch (subject.grade) {
       case 'A':
-        gradeColor = Colors.green;
+        gradeColor = Theme.of(context).colorScheme.primary;
         break;
       case 'B':
-        gradeColor = Colors.blue;
+        gradeColor = Theme.of(context).colorScheme.secondary;
         break;
       case 'C':
-        gradeColor = Colors.orange;
+        gradeColor = Theme.of(context).colorScheme.tertiary;
         break;
       default:
-        gradeColor = Colors.red;
+        gradeColor = Theme.of(context).colorScheme.error;
     }
 
     return Card(
