@@ -8,7 +8,6 @@ class SubjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Generate color based on grade
     Color gradeColor;
     switch (subject.grade) {
       case 'A':
@@ -25,33 +24,49 @@ class SubjectCard extends StatelessWidget {
     }
 
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
-        leading: CircleAvatar(
-          backgroundColor: gradeColor.withValues(alpha: 0.2),
-          foregroundColor: gradeColor,
-          radius: 28,
-          child: Text(
-            subject.grade,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+      margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 4.0),
+          leading: Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              color: gradeColor.withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            alignment: Alignment.center,
+            child: Text(
+              subject.grade,
+              style: TextStyle(
+                color: gradeColor,
+                fontSize: 26,
+                fontWeight: FontWeight.w800,
+              ),
             ),
           ),
-        ),
-        title: Text(
-          subject.name,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+          title: Text(
+            subject.name,
+            style: const TextStyle(
+              fontSize: 19,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-        subtitle: Text(
-          'Mark: ${subject.mark.toStringAsFixed(1)}',
-          style: TextStyle(
-            fontSize: 15,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          subtitle: Padding(
+            padding: const EdgeInsets.only(top: 4.0),
+            child: Text(
+              'Mark: ${subject.mark.toStringAsFixed(1)}',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+          trailing: Icon(
+            Icons.chevron_left,
+            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
           ),
         ),
       ),
