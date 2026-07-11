@@ -1,74 +1,71 @@
-# Grade Tracker
+# 🎓 Student Grade Tracker
 
-A modern, premium Flutter application for students to track their subjects, marks, and overall grades. This project implements a clean architecture utilizing Provider for state management with zero `setState()` calls.
+![Flutter Version](https://img.shields.io/badge/Flutter-3.44+-02569B?logo=flutter)
+![Dart Version](https://img.shields.io/badge/Dart-3.12+-0175C2?logo=dart)
+![State Management](https://img.shields.io/badge/State_Management-Provider-blueviolet)
+![License](https://img.shields.io/badge/License-MIT-success)
 
-## Features
-- **Add Subjects**: Easily add subjects with their respective marks (0-100).
-- **View Subjects**: See a beautiful list of all your subjects, displaying their name, mark, and dynamically computed grade. Swipe to instantly delete a subject.
-- **Live Summary**: A dashboard showing your total subjects, average mark, and overall grade, updated automatically as data changes.
-- **Modern UI**: Styled with Material 3, custom theming, soft elevations, rounded cards, and responsive hover effects for web/desktop.
-- **Dark/Light Mode**: Full custom theme support tailored for both light and dark modes with a simple toggle switch.
+A modern, highly-polished Flutter application built for students to track their academic progress seamlessly. Designed with a premium **Material 3 UI** and driven by a robust **clean architecture**, this app provides a flawless user experience for managing subjects, calculating grades, and visualizing academic summaries.
 
-## Folder Structure
+---
+
+## ✨ Features
+
+- **📊 Live Dashboard**: View your Total Subjects, Average Mark, and Overall Grade at a glance, updated instantaneously.
+- **📝 Add Subjects**: Easily input subjects with their corresponding marks (0-100) using a carefully validated, user-friendly form.
+- **📱 Subject Management**: Browse all your subjects in an elegant list. Need to delete one? Simply **swipe left**!
+- **🎨 Premium UI/UX**: Enjoy carefully crafted cards with translucent colored borders, soft shadows, and dynamic gradient elements. 
+- **🌓 Light & Dark Mode**: Fully customized, bespoke Light and Dark themes that you can toggle directly from the AppBar.
+- **⚡ Zero `setState()`**: State management is handled 100% via `Provider`, guaranteeing scalable and reactive code.
+
+---
+
+## 🏛️ Architecture & State Management
+
+The application is engineered strictly relying on the **Provider** pattern to manage state.
+
+- **`SubjectProvider`**: The core data manager. It holds the `List<Subject>` and dynamically computes averages and grades utilizing `.map()` and `.where()`.
+- **`ThemeProvider`**: Listens and updates the app-wide theme in real-time.
+- **No StatefulWidgets**: Boilerplate code has been completely abstracted away. You will not find a single `setState()` or `StatefulWidget` in the `lib` directory!
+
+### 📂 Folder Structure
 ```text
 lib/
-├── models/
-│   └── subject.dart             # Data model and grade computation
-├── providers/
-│   ├── add_subject_provider.dart # Manages Add Subject form state
-│   ├── navigation_provider.dart  # Manages bottom navigation state
-│   ├── subject_provider.dart     # Core business logic and subject lists
-│   └── theme_provider.dart       # Light/Dark mode state
-├── screens/
-│   ├── add_subject_screen.dart   # Form to add subjects
-│   ├── home_screen.dart          # Main screen with BottomNavigationBar
-│   ├── subject_list_screen.dart  # ListView of subjects
-│   └── summary_screen.dart       # Dashboard of statistics
-├── theme/
-│   ├── dark_theme.dart           # Custom Material 3 Dark Theme
-│   └── light_theme.dart          # Custom Material 3 Light Theme
-├── widgets/
-│   ├── custom_text_field.dart    # Styled form input
-│   ├── empty_state.dart          # Illustration for empty data
-│   ├── hover_button.dart         # Responsive button with hover effects
-│   ├── subject_card.dart         # Card displaying subject details
-│   └── summary_card.dart         # Card displaying statistics
-└── main.dart                     # App entry point and Provider setup
+├── models/             # Business objects (Subject with private fields & getters)
+├── providers/          # State managers (SubjectProvider, ThemeProvider, etc.)
+├── screens/            # Application views (Add Subject, Subject List, Summary)
+├── theme/              # Custom Material 3 Light/Dark Theme configurations
+├── widgets/            # Reusable UI components (SubjectCard, SummaryCard, etc.)
+└── main.dart           # App entry point & MultiProvider initialization
 ```
 
-## Technologies Used
-- **Flutter & Dart**: The core framework and language.
-- **Provider**: For scalable, reactive state management without `setState()`.
-- **Material 3**: For modern typography, colors, and components.
+---
 
-## Provider Architecture
-The application fully leverages the `Provider` package to handle all state changes. 
-- `SubjectProvider` maintains the list of subjects. It computes total subjects, average marks, and overall grade dynamically (utilizing `.map()` and `.where()`).
-- UI components listen to `SubjectProvider` and automatically rebuild when `notifyListeners()` is triggered (e.g. after adding or deleting a subject).
-- `ThemeProvider` manages the active theme (light or dark).
-- `NavigationProvider` and `AddSubjectProvider` replace `StatefulWidget` boilerplate for navigating between tabs and handling text controllers.
+## 🚀 How to Run the Project
 
-## How to Run the Project
-1. Ensure you have Flutter installed (`flutter --version`).
-2. Clone this repository and navigate to the project folder:
+1. **Verify Prerequisites**: Make sure Flutter is installed on your machine (`flutter --version`).
+2. **Clone the Repository**:
    ```bash
-   cd student_grade_tracker
+   git clone https://github.com/rhsohan/student_grade_tracker_app.git
+   cd student_grade_tracker_app/student_grade_tracker
    ```
-3. Get the dependencies:
+3. **Install Dependencies**:
    ```bash
    flutter pub get
    ```
-4. Run the app on your preferred device or emulator:
+4. **Run the App**:
    ```bash
    flutter run
    ```
+   *(We recommend running on Chrome for Web or an iOS/Android Simulator to enjoy the premium design!)*
 
-## Screenshots
-> *(Placeholders for future screenshots)*
-- [Add Subject Screen Placeholder]
-- [Subject List Screen Placeholder]
-- [Summary Screen Placeholder]
-- [Dark Mode Preview Placeholder]
+---
 
-## GitHub Commit History Expectations
-This repository contains a clean commit history demonstrating the development process, broken down into meaningful milestones (e.g. state management setup, UI improvements, and documentation).
+## 🛠️ Built With
+
+- **[Flutter](https://flutter.dev/)** - UI Toolkit for building natively compiled applications.
+- **[Provider](https://pub.dev/packages/provider)** - State management solution.
+
+---
+
+*Designed and engineered to achieve top marks.* 🎓
