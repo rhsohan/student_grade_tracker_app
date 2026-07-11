@@ -20,40 +20,68 @@ class SubjectListScreen extends StatelessWidget {
       );
     }
 
-    return ListView.builder(
-      itemCount: subjectProvider.subjects.length,
-      itemBuilder: (context, index) {
-        final subject = subjectProvider.subjects[index];
-        return Dismissible(
-          key: ValueKey('${subject.name}_${subject.mark}_$index'),
-          direction: DismissDirection.endToStart,
-          background: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.error,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            alignment: Alignment.centerRight,
-            padding: const EdgeInsets.only(right: 20.0),
-            child: Icon(
-              Icons.delete_outline,
-              color: Theme.of(context).colorScheme.onError,
-              size: 32,
-            ),
-          ),
-          onDismissed: (_) {
-            subjectProvider.removeSubject(subject);
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text('${subject.name} deleted'),
-                behavior: SnackBarBehavior.floating,
-                backgroundColor: Theme.of(context).colorScheme.error,
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.swipe_left_rounded,
+                size: 20,
+                color: Theme.of(context).colorScheme.onSurfaceVariant.withValues(alpha: 0.6),
               ),
-            );
-          },
-          child: SubjectCard(subject: subject),
-        );
-      },
+              const SizedBox(width: 8),
+              Text(
+                'Swipe a subject left to delete',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant.withValues(alpha: 0.8),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: subjectProvider.subjects.length,
+            itemBuilder: (context, index) {
+              final subject = subjectProvider.subjects[index];
+              return Dismissible(
+                key: ValueKey('${subject.name}_${subject.mark}_$index'),
+                direction: DismissDirection.endToStart,
+                background: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.error,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  alignment: Alignment.centerRight,
+                  padding: const EdgeInsets.only(right: 20.0),
+                  child: Icon(
+                    Icons.delete_outline,
+                    color: Theme.of(context).colorScheme.onError,
+                    size: 32,
+                  ),
+                ),
+                onDismissed: (_) {
+                  subjectProvider.removeSubject(subject);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('${subject.name} deleted'),
+                      behavior: SnackBarBehavior.floating,
+                      backgroundColor: Theme.of(context).colorScheme.error,
+                    ),
+                  );
+                },
+                child: SubjectCard(subject: subject),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }
