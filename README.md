@@ -11,16 +11,13 @@ A modern, highly-polished Flutter application built for students to track their 
 
 ## 📸 Screenshots
 
-<p align="center">
-  <img src="screenshots/add_subject_home(light%20theme).png" width="30%" alt="Add Subject (Light)" />
-  <img src="screenshots/add_subject_home(dark%20theme).png" width="30%" alt="Add Subject (Dark)" />
-  <img src="screenshots/summary.png" width="30%" alt="Summary Dashboard" />
-</p>
-<p align="center">
-  <img src="screenshots/subject_list%20(a,b,c,f).png" width="30%" alt="Subject List" />
-  <img src="screenshots/save_marks_of_subject.png" width="30%" alt="Save Marks Dialog" />
-  <img src="screenshots/dismissible_subjectCard.png" width="30%" alt="Dismissible Subject Card" />
-</p>
+| Add Subject (Light Theme) | Add Subject (Dark Theme) | Summary Dashboard |
+| :---: | :---: | :---: |
+| <img src="screenshots/add_subject_home(light%20theme).png" width="250" alt="Add Subject (Light Theme)" /> | <img src="screenshots/add_subject_home(dark%20theme).png" width="250" alt="Add Subject (Dark Theme)" /> | <img src="screenshots/summary.png" width="250" alt="Summary Dashboard" /> |
+
+| Subject List | Save Marks | Dismissible Card |
+| :---: | :---: | :---: |
+| <img src="screenshots/subject_list%20(a,b,c,f).png" width="250" alt="Subject List" /> | <img src="screenshots/save_marks_of_subject.png" width="250" alt="Save Marks Dialog" /> | <img src="screenshots/dismissible_subjectCard.png" width="250" alt="Dismissible Subject Card" /> |
 
 ---
 
