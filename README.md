@@ -9,6 +9,21 @@ A modern, highly-polished Flutter application built for students to track their 
 
 ---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/add_subject_home(light%20theme).png" width="30%" alt="Add Subject (Light)" />
+  <img src="screenshots/add_subject_home(dark%20theme).png" width="30%" alt="Add Subject (Dark)" />
+  <img src="screenshots/summary.png" width="30%" alt="Summary Dashboard" />
+</p>
+<p align="center">
+  <img src="screenshots/subject_list%20(a,b,c,f).png" width="30%" alt="Subject List" />
+  <img src="screenshots/save_marks_of_subject.png" width="30%" alt="Save Marks Dialog" />
+  <img src="screenshots/dismissible_subjectCard.png" width="30%" alt="Dismissible Subject Card" />
+</p>
+
+---
+
 ## ✨ Features
 
 - **📊 Live Dashboard**: View your Total Subjects, Average Mark, and Overall Grade at a glance, updated instantaneously.
